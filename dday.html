@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>인터넷활용 실습 템플릿</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>임재영</h1>
+        <p class="subtitle">Lim Jae Young</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <main class="container">
+        <section>
+            <script>
+                let now = new Date(); 
+                let yearStr = prompt("현재 연도를 입력하세요:", "2025");
+                let monthStr = prompt("현재 월을 입력하세요 (1-12):");
+                let dayStr = prompt("현재 일을 입력하세요 (1-31):");
+                if (!yearStr || !monthStr || !dayStr) 
+                {document.write("계산을 취소했습니다.")}
+                else {
+                    let year = parseInt(yearStr);
+                    let month = parseInt(monthStr); // 월은 0부터 시작
+                    let day = parseInt(dayStr);
+                    let targetDate = new Date(year, month-1, day);
+                    let diffMs = targetDate.getTime() - now.getTime();
+                    let daysDiff = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+                    if (daysDiff > 0) {
+                        document.write("<p> D - " + daysDiff + "</p>");
+                    } else if (daysDiff < 0) {
+                        document.write("<p> D + " + Math.abs(daysDiff) + "</p>");
+                    } else {
+                        document.write("<p> D - day </p>");
+                    }
+                }
+
+            </script>
+        </section>
+    </main>
+    <footer>
+        <small>&copy; <span id="year"></span>Lim Jae Young</small>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

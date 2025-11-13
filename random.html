@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>인터넷활용 실습 템플릿</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>임재영</h1>
+        <p class="subtitle">Lim Jae Young</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <main class="container">
+        <section>
+            <script>
+                let inputString = prompt("좋아하는 음식들을 쉼표(,)로 구분하여 입력하세요:", "짜장면,짬뽕,볶음밥");
+                if (!inputString) {
+                    document.write("<p>뽑기를 취소했습니다.</p>"); 
+                }
+                else {
+                    let items = inputString.split(',');
+                    let index = Math.floor(Math.random() * items.length);
+                    let choice = items[index].trim();
+                    document.write("<p>오늘의 추천 음식: " + choice + "</p>");
+                }
+            </script>
+        </section>
+    </main>
+    <footer>
+        <small>&copy; <span id="year"></span>Lim Jae Young</small>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
